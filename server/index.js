@@ -48,6 +48,18 @@ app.get('/dishes/:id', async(req, res) => {
 })
 
 //update a dish
+
+app.put('/dishes/:id', async(req, res) => {
+  try{
+    const { id } = req.params
+    const { name } = req.body
+    const updateDish = await pool.query("UPDATE main_dish SET name = $1 WHERE id = $2", [name, id])
+
+    res.json("Dish was updated")
+  } catch(err) {
+    console.log(err.message)
+  }
+})
 //delete a dish
 
 app.listen(5000, () => {
