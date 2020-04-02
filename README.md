@@ -13,3 +13,13 @@ I love cooking but hate coming up with what to make each day. I always cook one 
 - Express
 - PostgreSQL
 
+## Running the Program
+
+### Server
+
+To launch the server, run:
+
+```
+$ cd server
+$ nodemon
+```
