@@ -60,7 +60,19 @@ app.put('/dishes/:id', async(req, res) => {
     console.log(err.message)
   }
 })
+
 //delete a dish
+
+app.delete('/dishes/:id', async(req,res) => {
+  try {
+    const { id } = req.params
+    const deleteDish = await pool.query("DELETE FROM main_dish WHERE id = $1", [id])
+
+    res.json('Dish was deleted')
+  } catch(err) {
+    console.log(err.message)
+  }
+})
 
 app.listen(5000, () => {
   console.log('server has started on port 5000')
