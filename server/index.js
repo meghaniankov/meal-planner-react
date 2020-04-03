@@ -24,7 +24,6 @@ app.post('/dishes', async(req,res) => {
   }
 })
 
-//get all dishes
 app.get('/dishes', async(req, res) => {
   try {
     const allDishes = await pool.query("SELECT * FROM main_dish")
@@ -33,8 +32,6 @@ app.get('/dishes', async(req, res) => {
     console.log(err.message)
   }
 })
-
-//get a dish
 
 app.get('/dishes/:id', async(req, res) => {
   try {
@@ -47,8 +44,6 @@ app.get('/dishes/:id', async(req, res) => {
   }
 })
 
-//update a dish
-
 app.put('/dishes/:id', async(req, res) => {
   try{
     const { id } = req.params
@@ -60,8 +55,6 @@ app.put('/dishes/:id', async(req, res) => {
     console.log(err.message)
   }
 })
-
-//delete a dish
 
 app.delete('/dishes/:id', async(req,res) => {
   try {

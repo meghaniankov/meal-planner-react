@@ -23,3 +23,16 @@ To launch the server, run:
 $ cd server
 $ nodemon
 ```
+
+### Client
+
+To launch the front end, run:
+
+```
+$ cd client
+$ yarn start
+```
+
+### View in Browser
+
+Visit ```http://localhost:3000```
